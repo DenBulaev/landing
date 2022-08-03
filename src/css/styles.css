@@ -1,0 +1,144 @@
+.footer-up-btn, .footer-copy {
+  font: 300 14px Roboto;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 1;
+}
+
+/*#region Footer*/
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #202020;
+}
+.footer-content-wrapper {
+  position: relative;
+  display: flex;
+  padding-top: 97px;
+  padding-bottom: 86px;
+}
+@media (max-width: 1056px) {
+  .footer-content-block.hidden.hidden {
+    transform: scale(0);
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+.footer-content-block:not(:last-child) {
+  margin-right: 31px;
+}
+.footer-company-block {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1056px) {
+  .footer-company-block {
+    flex-direction: column;
+  }
+  .footer-company-block > .footer-content-block:first-of-type ul {
+    position: relative;
+  }
+  .footer-company-block > .footer-content-block:first-of-type ul::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    border: 1px solid #565656;
+    bottom: calc(-16px / 2);
+  }
+}
+.footer-block-title {
+  line-height: 27px;
+  font: 700 24px Oswald;
+  color: white;
+}
+.footer-block-title.opacity-0 {
+  opacity: 0;
+}
+@media (max-width: 1056px) {
+  .footer-block-title.opacity-0 {
+    transform: scale(0);
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+.footer-content-list {
+  padding: 0;
+  margin: 16px 0;
+  list-style-type: none;
+}
+.footer-content-list .footer-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.footer-content-list:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.footer-item {
+  font: 300 16px Roboto;
+  color: white;
+}
+.footer-item.bold {
+  font-weight: 400;
+}
+.footer-link {
+  text-decoration: none;
+  color: white;
+}
+.footer-link:visited, .footer-link:hover {
+  color: #fed442;
+}
+.footer-copy {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  line-height: 33px;
+  text-transform: lowercase;
+}
+.footer-up-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  right: 0;
+  bottom: 10px;
+  height: 44px;
+  width: 44px;
+  text-decoration: none;
+  background: #181818;
+  border-radius: 3px;
+}
+.footer-up-btn .arrow {
+  margin-bottom: 3px;
+}
+
+/*#endregion Footer*/
+
+/*# sourceMappingURL=styles.css.map */

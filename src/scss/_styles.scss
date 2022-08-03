@@ -1,0 +1,149 @@
+@import '../scss/extends';
+@import '../scss/mixins';
+@import '../scss/variables';
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 1;
+}
+
+/*#region Footer*/
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #202020;
+
+  &-content-wrapper {
+    position: relative;
+    display: flex;
+    padding-top: 97px;
+    padding-bottom: 86px;
+  }
+
+  &-content-block.hidden.hidden {
+    @media (max-width: 1056px) {
+      @include hide-element;
+    } 
+  }
+
+  &-content-block:not(:last-child) {
+    margin-right: 31px;
+  }
+
+  &-company-block {
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 1056px) {
+      flex-direction: column;
+
+      &>.footer-content-block:first-of-type ul {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: '';
+          width: 100%;
+          border: 1px solid #565656;
+          bottom: calc(-#{$space-between-footer-items} / 2);
+        }
+      }
+    } 
+  }
+
+  &-block-title {
+    line-height: 27px;
+    font: 700 24px Oswald;
+    color: white;
+
+    &.opacity-0 {
+      opacity: 0;
+
+      @media (max-width: 1056px) {
+        @include hide-element;
+      } 
+    }
+  }
+
+  &-content-list {
+    padding: 0;
+    margin: $space-between-footer-items 0;
+    list-style-type: none;
+
+    & .footer-item:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-item {
+    font: 300 16px Roboto;
+    color: white;
+
+    &.bold {
+      font-weight: 400;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+    color: white;
+
+    &:visited,
+    &:hover {
+      color: #fed442;
+    }
+  }
+
+  &-copy {
+    @extend %extra-text;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    line-height: 33px;
+    text-transform: lowercase;
+  }
+
+  &-up-btn {
+    @extend %extra-text;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    right: 0;
+    bottom: 10px;
+    height: 44px;
+    width: 44px;
+    text-decoration: none;
+    background: #181818;
+    border-radius: 3px;
+
+    .arrow {
+      margin-bottom: 3px;
+    }
+  }
+}
+/*#endregion Footer*/
